@@ -153,10 +153,10 @@ The Majesty informs you that lately, some Bandits have been harrasing Cider Town
 [[The Mountain]]
 [[Town Hall]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="The Forest" tags="" position="439,250" size="100,100">&lt;&lt;set $location to &quot;forest&quot;&gt;&gt;
-You set forth for the Forest; what better place to complete a quest? Especially when &lt;&lt;if $quest is &quot;save&quot;&gt;&gt;you must hunt down a Griffon.&lt;&lt;elseif $quest is &quot;fetch&quot;&gt;&gt;you must discover a magic &lt;&lt;if $plant_known is 1&gt;&gt;flower.&lt;&lt;else&gt;&gt;elixir.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+You set forth for the Forest; what better place to complete a quest? Especially when &lt;&lt;if $quest == &quot;save&quot;&gt;&gt;you must hunt down a Griffon.&lt;&lt;elseif $quest == &quot;fetch&quot;&gt;&gt;you must discover a magic &lt;&lt;if $plant_known == 1&gt;&gt;flower.&lt;&lt;else&gt;&gt;elixir.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 [[A Long Walk to Nothing]] later...</tw-passagedata><tw-passagedata pid="6" name="The Mountain" tags="" position="564,254" size="100,100">&lt;&lt;set $location to &quot;mountain&quot;&gt;&gt;
-You decide you must scale the Mountain, as grand and terrible as it appears. &lt;&lt;if $camp_known is true&gt;&gt;This is where the townsfolk said you&#39;d find the Bandit camp, after all.&lt;&lt;else&gt;&gt;Surely, this &lt;&lt;if $quest is &quot;save&quot;&gt;&gt; is where the Griffon has taken the Prince! &lt;&lt;else&gt;&gt; is where those bandits are hiding!&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+You decide you must scale the Mountain, as grand and terrible as it appears. &lt;&lt;if $camp_known == true&gt;&gt;This is where the townsfolk said you&#39;d find the Bandit camp, after all.&lt;&lt;else&gt;&gt;Surely, this &lt;&lt;if $quest == &quot;save&quot;&gt;&gt; is where the Griffon has taken the Prince! &lt;&lt;else&gt;&gt; is where those bandits are hiding!&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
 [[A Long Walk to Nothing]] later...</tw-passagedata><tw-passagedata pid="7" name="Town Hall" tags="" position="696,254" size="100,100">Surely the best place to go to find the necessary information to solve this problem is the Town Hall. The townsfolk can tell you all sorts of things about their problems.
@@ -177,20 +177,20 @@ You inform the Apothecary of your quest to protect the Majesty from all disease.
 &lt;&lt;set $plant_known to 1&gt;&gt;
 
 Feeling quite well informed, you know it is time to head to [[The Forest]].
-</tw-passagedata><tw-passagedata pid="9" name="A Long Walk to Nothing" tags="" position="496,372" size="100,100">Though you&#39;ve been traveling a while now, you haven&#39;t come across any signs of the &lt;&lt;if $quest is &quot;save&quot;&gt;&gt;Griffon&lt;&lt;elseif $quest is &quot;bandits&quot;&gt;&gt;Bandits&lt;&lt;elseif $plant_known is 1&gt;&gt;magic plants&lt;&lt;else&gt;&gt;magic elixir&lt;&lt;/if&gt;&gt;. Perhaps you simply need to look harder - or take a break, as it grows late.
-&lt;&lt;set $armor to true&gt;&gt;&lt;&lt;set $sword to true&gt;&gt;&lt;&lt;$set $injured to 0&gt;&gt;&lt;&lt;set $trophies_drake to false&gt;&gt;&lt;&lt;set $tunnel to false&gt;&gt;
+</tw-passagedata><tw-passagedata pid="9" name="A Long Walk to Nothing" tags="" position="496,372" size="100,100">Though you&#39;ve been traveling a while now, you haven&#39;t come across any signs of the &lt;&lt;if $quest == &quot;save&quot;&gt;&gt;Griffon&lt;&lt;elseif $quest == &quot;bandits&quot;&gt;&gt;Bandits&lt;&lt;elseif $plant_known == 1&gt;&gt;magic plants&lt;&lt;else&gt;&gt;magic elixir&lt;&lt;/if&gt;&gt;. Perhaps you simply need to look harder - or take a break, as it grows late.
+&lt;&lt;set $armor to true&gt;&gt;&lt;&lt;set $sword to true&gt;&gt;&lt;&lt;set $injured to 0&gt;&gt;&lt;&lt;set $trophies_drake to false&gt;&gt;&lt;&lt;set $tunnel to false&gt;&gt;
 [[Make Camp]] or [[Keep Going]]</tw-passagedata><tw-passagedata pid="10" name="Make Camp" tags="" position="468,507" size="100,100">It&#39;s not as though the Majesty gave you a deadline, after all. It&#39;s best to take your time and ensure that you are well-rested before continuing your journey. &lt;&lt;if $quest is &quot;fetch&quot;&gt;&gt;&lt;&lt;if $plant_known is 1&gt;&gt;Well, the Apothecary told you that the flower only blooms at midnight, but it&#39;s probably fine if it isn&#39;t blooming when you pick it. &lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $location is &quot;forest&quot;&gt;&gt;
 You make your little camp safely ensconced by the trees, and settle in to polish your armor and sword before you lay down to sleep.&lt;&lt;else&gt;&gt;The Mountain is fearsome to climb and you should not neglect your health. You set your camp and clean your armor and sword before settling in to sleep.
 
 You rest peacefully through the night, protected within your tent from the windstorm outside -- until a rumbling underneath the wind disturbs you.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $quest is &quot;fetch&quot;&gt;&gt;&lt;&lt;set $unicorn to 1&gt;&gt;
+&lt;&lt;if $quest == &quot;fetch&quot;&gt;&gt;&lt;&lt;set $unicorn to 1&gt;&gt;
 
 As you set your armor aside and begin to head towards your bedroll, you catch a glimmer of something reflecting the firelight in the tree line.
 
 You stop, and turn towards it, but it&#39;s gone again. When you turn back to continue your journey to the bedroll, &lt;unicorn&gt;you see a [[unicorn|The Unicorn]]&lt;/unicorn&gt; appear before you!
 
-&lt;&lt;elseif $quest is &quot;save&quot;&gt;&gt;&lt;&lt;if $location is &quot;forest&quot;&gt;&gt;&lt;&lt;set $direction is &quot;&quot;&gt;&gt;
+&lt;&lt;elseif $quest == &quot;save&quot;&gt;&gt;&lt;&lt;if $location == &quot;forest&quot;&gt;&gt;&lt;&lt;set $direction to &quot;&quot;&gt;&gt;
 As you rest your head on your bedroll, the rustling of the leaves overhead reminds you of great wings, beating through the sky. You dream of yourself as a dragon.
 
 In the morning, you must set out once more. After you break camp, which way would you like to go?
@@ -198,25 +198,23 @@ In the morning, you must set out once more. After you break camp, which way woul
 [[Left|Sally Forth][$direction to &quot;left&quot;]]	
 [[Forward|Sally Forth][$direction to &quot;forward&quot;]]	
 [[Right|Sally Forth][$direction to &quot;right&quot;]]
-&lt;&lt;elseif $location is &quot;mountain&quot;&gt;&gt;
-The Mountain is fearsome to climb, after all, and you should not neglect your health. You set your camp and begin cleaning your armor and sword. You rest peacefully through the night, protected within your tent from the windstorm outside -- until a rumbling underneath the wind disturbs you.
-
+&lt;&lt;elseif $location == &quot;mountain&quot;&gt;&gt;
 [[Investigate the Rumbling]] 
 [[Go Back to Sleep][$know_avalanche to false]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;if $camp_known is true&gt;&gt;It is still a ways to the camp, regardless. It is better that you meet them well-rested than exhausted, especially as the route is a treacherous one. &lt;&lt;else&gt;&gt;It is probably a long while before you run into any Bandits, anyway. They&#39;re somewhere in the Mountain, but you&#39;ll want to be at your best when you encounter them. &lt;&lt;/if&gt;&gt;You find a small alcove in the Mountainside in which to make your camp, and settle in for the night.
+&lt;&lt;if $camp_known == true&gt;&gt;It is still a ways to the camp, regardless. It is better that you meet them well-rested than exhausted, especially as the route is a treacherous one. &lt;&lt;else&gt;&gt;It is probably a long while before you run into any Bandits, anyway. They&#39;re somewhere in the Mountain, but you&#39;ll want to be at your best when you encounter them. &lt;&lt;/if&gt;&gt;You find a small alcove in the Mountainside in which to make your camp, and settle in for the night.
 
-&lt;&lt;if $camp_known is true&gt;&gt;You rest peacefully through the night, undisturbed by any going-ons of the world outside. In the morning, you awake refreshed and ready for the Quest ahead.&lt;&lt;else&gt;&gt;Your much-needed respite is disturbed in the darkness! The foul Bandits descend upon your camp, attempting to steal your arms and supplies. Luckily, you keep your sword next to you when you rest, and may begin attempting to fend them off.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $camp_known == true&gt;&gt;You rest peacefully through the night, undisturbed by any going-ons of the world outside. In the morning, you awake refreshed and ready for the Quest ahead.&lt;&lt;else&gt;&gt;Your much-needed respite is disturbed in the darkness! The foul Bandits descend upon your camp, attempting to steal your arms and supplies. Luckily, you keep your sword next to you when you rest, and may begin attempting to fend them off.&lt;&lt;/if&gt;&gt;
 [[To Battle!]] 
 [[Call Out to Them]]
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Keep Going" tags="" position="626,434" size="100,100">You trudge onwards, embracing the hardship of your journey. Every quest has its trials and tribulations, after all.&lt;&lt;if $quest is &quot;fetch&quot;&gt; &lt;&lt;if $plant_known is 1&gt;&gt;And the flower will only bloom tonight, so it is, in fact the perfect time for you to be marching on.&lt;&lt;/if&gt;&gt;&lt;&lt;elseif $quest is &quot;bandit&quot;&gt;&gt; Besides, who knows who these Bandits may terrorize if you give them the time to? It is your duty as a Quester to ensure they don&#39;t get the chance to. &lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Keep Going" tags="" position="626,434" size="100,100">You trudge onwards, embracing the hardship of your journey. Every quest has its trials and tribulations, after all.&lt;&lt;if $quest == &quot;fetch&quot;&gt;&gt; &lt;&lt;if $plant_known == 1&gt;&gt;And the flower will only bloom tonight, so it is, in fact the perfect time for you to be marching on.&lt;&lt;/if&gt;&gt;&lt;&lt;elseif $quest is &quot;bandit&quot;&gt;&gt; Besides, who knows who these Bandits may terrorize if you give them the time to? It is your duty as a Quester to ensure they don&#39;t get the chance to. &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $quest is &quot;fetch&quot;&gt;
+&lt;&lt;if $quest == &quot;fetch&quot;&gt;
 &lt;&lt;set $unicorn to 0&gt;&gt;
 The moonlight guides you, and you come upon a clearing, filled with [[a Pond|The Pond]].
-&lt;&lt;elseif $quest is &quot;save&quot;&gt;&gt;&lt;&lt;if $location is &quot;forest&quot;&gt;&gt;
+&lt;&lt;elseif $quest == &quot;save&quot;&gt;&gt;&lt;&lt;if $location == &quot;forest&quot;&gt;&gt;
 You press on, the dimming light no concern of yours, as you have come well-supplied. Wielding your torch, you press on through the trees as the wind dances around you. The wind is too playful for a quest as serious as yours, in fact, and blows your torch out. How will you handle this stirring nonsense?&lt;&lt;set dawn to 0&gt;&gt;
 [[Relight Your Torch And Continue|Relight]]
 [[Ignore the Wind&#39;s Tomfoolery -- Press On In Spite of the Darkness|Darkness]] 
@@ -224,18 +222,18 @@ You press on, the dimming light no concern of yours, as you have come well-suppl
 &lt;&lt;else&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-You march on up the Mountain, prepared to face all threats -- and are faced instead with a choice. &lt;&lt;if $camp_known is true&gt;&gt;Your intel informs you that the path less traveled is the one on which you will find the Bandits.&lt;&lt;/if&gt;&gt;
+You march on up the Mountain, prepared to face all threats -- and are faced instead with a choice. &lt;&lt;if $camp_known == true&gt;&gt;Your intel informs you that the path less traveled is the one on which you will find the Bandits.&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $day to false&gt;&gt;
 [[Main Path]] [[Side Path]]
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="12" name="The Pond" tags="" position="100,536" size="100,100">&lt;&lt;if $unicorn is 1&gt;&gt;
+</tw-passagedata><tw-passagedata pid="12" name="The Pond" tags="" position="100,536" size="100,100">&lt;&lt;if $unicorn == 1&gt;&gt;
 The afternoon light fractures across the surface of the pond before you, interrupted only by an islet out in the middle of the water. 
 
 There is nothing that resembles a flower, though, from your view.
 &lt;&lt;else&gt;&gt;
 Though it is now deep into the night, it is bright here in this clearing, as the pond reflects the moonlight. From the center of the pond comes another source of light; a large pale blue flower blooms on an islet.
 
-&lt;&lt;if $plant_known is 1&gt;&gt;
+&lt;&lt;if $plant_known == 1&gt;&gt;
 This most certainly appears to be a moon flower, and thus exactly what you need for the Majesy&#39;s elixir. The only question, then, is how to get it? Or maybe... if you will get it?
 &lt;&lt;else&gt;&gt;
 No sign of an elixir, though. Perhaps your quest is not so simple as finding it premade?
@@ -253,22 +251,22 @@ No challenge is too great for you! What course of action will you take here?
 
 [[Perhaps You Aren&#39;t Cut Out For Questing and Ought to Go Home|Give Up]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="The Islet" tags="" position="469,917" size="100,100">&lt;div class = &quot;center&quot;&gt;
-&lt;&lt;if $unicorn is 0&gt;&gt;
+&lt;&lt;if $unicorn == 0&gt;&gt;
 The flower before you positively shines in the night, large and resplendent. Up close, it is even more beautiful than from a distance.
 &lt;&lt;else&gt;&gt;
 The only thing on the islet is what appears to be a small daisy.
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $unicorn is 1&gt;&gt;&lt;&lt;if $plant_known is 1&gt;&gt;
-The flower is supposed to be magic, so maybe it appears as a daisy during the day, and nights that are not a full moon? It is, after all, surrounded by water. Still, you recall &lt;unicorn&gt;the Unicorn&#39;s warning&lt;/unicorn&gt;. It did say that if you took the flower, it would destroy the Forest, and you with it.
+&lt;&lt;if $unicorn == 1&gt;&gt;&lt;&lt;if $plant_known == 1&gt;&gt;
+The flower is supposed to be magic, so maybe it appears as a daisy during the day, and nights that are not a full moon? It is, after all, surrounded by water. Still, you recall the Unicorn&#39;s warning. It did say that if you took the flower, it would destroy the Forest, and you with it.
 &lt;&lt;else&gt;&gt;
-If it&#39;s a magic flower, maybe it can disguise itself? Still, you recall &lt;unicorn&gt;the Unicorn&#39;s warning&lt;/unicorn&gt;. It did say that if you took the flower, it would destroy the Forest, and you with it.
+If it&#39;s a magic flower, maybe it can disguise itself? Still, you recall the Unicorn&#39;s warning. It did say that if you took the flower, it would destroy the Forest, and you with it.
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 What will you do?
 
 [[Take the Flower]] or [[Don&#39;t Take the Flower]] 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="Go Around - Pond" tags="" position="86,731" size="100,100">You walk the edge of the pond, disturbing the occasional frog. You don&#39;t see anything resembling a&lt;&lt;if $unicorn is 0&gt;&gt; path to the islet, though.&lt;&lt;elseif $plant_known is 1&gt;&gt; magic moon flower, though since it is not blooming it might be hard to see. Perhaps there is not enough water here?&lt;&lt;elseif $unicorn is 1&gt;&gt; magic moon flower, though.&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="Go Around - Pond" tags="" position="86,731" size="100,100">You walk the edge of the pond, disturbing the occasional frog. You don&#39;t see anything resembling a&lt;&lt;if $unicorn == 0&gt;&gt; path to the islet, though.&lt;&lt;elseif $plant_known == 1&gt;&gt; magic moon flower, though since it is not blooming it might be hard to see. Perhaps there is not enough water here?&lt;&lt;elseif $unicorn == 1&gt;&gt; magic moon flower, though.&lt;&lt;/if&gt;&gt;
 
 Where do you set off for now, quester?
 
@@ -283,7 +281,7 @@ Where do you set off for now, quester?
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Deep Forest" tags="" position="7,851" size="100,100">&lt;&lt;set $village to 0&gt;&gt;
 You decide to head deeper into the Forest. &lt;&lt;if $plant_known is 1&gt;&gt;&lt;&lt;if $unicorn is 0&gt;&gt;There may be more water somewhere else, and the flower may be there. Surely you can spot the flower even when it isn&#39;t in bloom, right?&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-You march onward, camping at night and walking during the day. For the first couple of nights, as you lay your campsite, &lt;&lt;if $unicorn is 0&gt;&gt;you catch glimpses of something silver, shimmering among the trees. Whatever it is never interferes with your journey, though, so you continue unhindered.&lt;&lt;else&gt;&gt;you catch glimpses of the &lt;text effect&gt;Unicorn&lt;/text effect&gt; among the trees, though it doesn&#39;t approach you again. It may want to see if you will heed its warning.&lt;&lt;/if&gt;&gt;
+You march onward, camping at night and walking during the day. For the first couple of nights, as you lay your campsite, &lt;&lt;if $unicorn == 0&gt;&gt;you catch glimpses of something silver, shimmering among the trees. Whatever it is never interferes with your journey, though, so you continue unhindered.&lt;&lt;else&gt;&gt;you catch glimpses of the Unicorn among the trees, though it doesn&#39;t approach you again. It may want to see if you will heed its warning.&lt;&lt;/if&gt;&gt;
 
 But you only see it those first two nights. By the third, you can&#39;t see much of anything except the dense trees. The Forest is older, here, and the canopy blocks out all light from the sky. You begin to have to navigate by torchlight.
 
@@ -291,7 +289,7 @@ Navigate as well as you can, that is. You are beginning to suspect that you are 
 
 &lt;div class = &quot;center&quot;&gt;
 [[Try to Turn Back|Turn Back]] or [[Keep Going|Even Deeper Forest]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="Even Deeper Forest" tags="end" position="120,864" size="100,100">&lt;&lt;if $village is 0&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="Even Deeper Forest" tags="end" position="120,864" size="100,100">&lt;&lt;if $village == 0&gt;&gt;
 &lt;div class = &quot;center&quot;&gt;
 You continue further into the Forest. You probably couldn&#39;t figure out which way is back, regardless, so it&#39;s probably best just to press on.
 
@@ -326,18 +324,18 @@ As you begin to step into the water, you recall that your armor is quite heavy. 
 [[Take Off Your Armor|No Armor]] Or [[Continue With It|Armored Swim]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="Rafting" tags="" position="395,741" size="100,100">Luckily, the Forest is a great place to find wood. Building a raft is not terribly difficult for one of your great skill; you gather fallen branches and strap them together with the helpful vegetation.
 
-All that&#39;s left is to [[sail to the islet...|The Islet]]</tw-passagedata><tw-passagedata pid="21" name="Take the Flower" tags="" position="350,959" size="100,100">You reach out and take the flower, tucking it safely away in one of your many adventuring pouches, before beginning your journey back home. &lt;&lt;if $plant_known is 1&gt;&gt;You now must bring it to the Apothecary so they can make the elixir.&lt;&lt;else&gt;&gt;Perhaps the Apothecary will know what to do with this.&lt;&lt;/if&gt;&gt;
+All that&#39;s left is to [[sail to the islet...|The Islet]]</tw-passagedata><tw-passagedata pid="21" name="Take the Flower" tags="" position="350,959" size="100,100">You reach out and take the flower, tucking it safely away in one of your many adventuring pouches, before beginning your journey back home. &lt;&lt;if $plant_known == 1&gt;&gt;You now must bring it to the Apothecary so they can make the elixir.&lt;&lt;else&gt;&gt;Perhaps the Apothecary will know what to do with this.&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $unicorn is 1&gt;&gt;Besides, the Forest dying sounds as though it isn&#39;t something you want to be here for. Best to get moving.&lt;&lt;else&gt;&gt;It gets you out of the Forest, at least. There&#39;s something unpleasant in the air now.&lt;&lt;/if&gt;&gt; You begin to retrace your steps, heading back to the town.
+&lt;&lt;if $unicorn == 1&gt;&gt;Besides, the Forest dying sounds as though it isn&#39;t something you want to be here for. Best to get moving.&lt;&lt;else&gt;&gt;It gets you out of the Forest, at least. There&#39;s something unpleasant in the air now.&lt;&lt;/if&gt;&gt; You begin to retrace your steps, heading back to the town.
 
-[[To the Apothecary|Apothecary 2]]</tw-passagedata><tw-passagedata pid="22" name="Don&#39;t Take the Flower" tags="" position="454,1068" size="100,100">&lt;&lt;if $unicorn is 1&gt;&gt;
-If this is the magic flower [unicorn]the Unicorn[/unicorn] spoke of, taking it could destroy everything. It might not even be the magic flower, even though it&#39;s in the center of this suspicious pond.
+[[To the Apothecary|Apothecary 2]]</tw-passagedata><tw-passagedata pid="22" name="Don&#39;t Take the Flower" tags="" position="454,1068" size="100,100">&lt;&lt;if $unicorn == 1&gt;&gt;
+If this is the magic flower the Unicorn spoke of, taking it could destroy everything. It might not even be the magic flower, even though it&#39;s in the center of this suspicious pond.
 &lt;&lt;else&gt;&gt;
-&lt;&lt;if $plant_known is 1&gt;&gt;Though this is surely what you need for the Majesty&#39;s elixir,&lt;&lt;else&gt;&gt;Though this clearly is magical,&lt;&lt;/if&gt;&gt; there seems some feeling in the air... like taking this flower would be irresponsible, somehow. It belongs here.
+&lt;&lt;if $plant_known == 1&gt;&gt;Though this is surely what you need for the Majesty&#39;s elixir,&lt;&lt;else&gt;&gt;Though this clearly is magical,&lt;&lt;/if&gt;&gt; there seems some feeling in the air... like taking this flower would be irresponsible, somehow. It belongs here.
 &lt;&lt;/if&gt;&gt;
 Though, know you have to determine where to go from here. You could keep going, deeper into the Forest, or you could go home.
 
-[[Keep Going|Deep Forest]] [[Return Without the Elixir]]</tw-passagedata><tw-passagedata pid="23" name="Apothecary 2" tags="" position="341,1073" size="100,100">&lt;&lt;if $plant_known is 0&gt;&gt;
+[[Keep Going|Deep Forest]] [[Return Without the Elixir]]</tw-passagedata><tw-passagedata pid="23" name="Apothecary 2" tags="" position="341,1073" size="100,100">&lt;&lt;if $plant_known == 0&gt;&gt;
 You step into the apothecary, and are met with the sight of rows of neatly labeled jars and carefully organized shelves. There are an assorment of herbs hanging from the rafters.
 
 You move up to the counter to speak to the Apothecary, hard at work at the mortar and pestle.
@@ -347,7 +345,7 @@ You move up to the counter to speak to the Apothecary, hard at work at the morta
 You inform the Apothecary of your quest to protect the Majesty from all disease, and show them the plant now in your possession.&lt;&lt;else&gt;&gt;The Apothecary is much the same as when you last vsited, with all the organized jars and herbs. You move up to the counter, searching for the Apothecary themself. They don&#39;t appear to be behind the counter, so you ring the bell.
 
 A moment later they appear, appearance in disarray. You present the flower to them.
-&lt;&lt;/if&gt;&gt;&lt;&lt;if $unicorn is 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;&lt;&lt;if $unicorn == 1&gt;&gt;
 &quot;Are you sure this is the right flower? ...Well, I&#39;ll try it, at least.&quot;
 &lt;&lt;else&gt;&gt;
 &quot;Incredible! This is a true miracle, Quester. I&#39;ll get that brew ready for you shortly.&quot;
@@ -357,32 +355,32 @@ The Apothecary takes the flower to the back with them, and returns in short orde
 [[Deliver Elixir]] [[Drink the Elixir]]
 
 </tw-passagedata><tw-passagedata pid="24" name="Drink the Elixir" tags="end" position="328,1197" size="100,100">You down the elixir, and proceed back to your life. When the Majesty tries to have you executed for your failure to complete your quest, you evade all strikes with ease, and escape into the Forest. You begin to make a new life for yourself there.
-&lt;&lt;if $unicorn is 1&gt;&gt;
+&lt;&lt;if $unicorn == 1&gt;&gt;
 It begins to change, though, and it isn&#39;t long until both it and you are unrecognizable, twisted things. Something that might have been the Unicorn once tries to kill you. It fails, and becomes your dinner that day. You forget why you came out here in the first place. You forget any previous roles you played. 
 
 You become hungry. 
 
 You begin to hunt.
 &lt;&lt;else&gt;&gt;
-You feel yourself called back to the Pond, back to the islet you stole the flower from, and settle yourself there. You see the [unicorn]Unicorn[/unicorn], sometimes, at the edge of the water. Its coat grows duller, and it seems to always be herding you back to the Pond when you venture out.
+You feel yourself called back to the Pond, back to the islet you stole the flower from, and settle yourself there. You see the Unicorn, sometimes, at the edge of the water. Its coat grows duller, and it seems to always be herding you back to the Pond when you venture out.
 
 The Forest is slowly withering, but you remain in perfect health.
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="Deliver Elixir" tags="end" position="216,1172" size="100,100">You present the elixir to the Majesty, eager to see your quest to completion. You are lavishly rewarded for your efforts.
-&lt;&lt;if $unicorn is 1&gt;&gt;
+&lt;&lt;if $unicorn == 1&gt;&gt;
 A week later, though, the Majesty sickens. There&#39;s whispers about things dying at the edge of the Forest, too, though you don&#39;t get the chance to investigate them, as you are executed for your failure.
 &lt;&lt;else&gt;&gt;
 It doesn&#39;t show immediately. Yet by the end of the first week, there are already rumors about things not being quite right in the Forest. The Majesty remains in perfect health -- better than ever, in fact, but as time goes on, the townsfolk and the Forest grow sicker, more withered. You are among them.
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="The Unicorn" tags="" position="249,378" size="100,100">The unicorn is much, much, much larger than you, and quite fearsome. Its shimmering coat is lit by the moon, and its fiece yellow eyes glare down at you. Its horn alone is twice the size of your own blade, which is currently tucked safely away with the rest of your gear -- and not near where you are now.
 
-&lt;unicorn text type&gt; &quot;Wherefore dost thou enter the woods?&quot; &lt;/unicorn text type&gt;
+&quot;Wherefore dost thou enter the woods?&quot; The Unicorn queries you.
 
 As a quester, you are well-versed in encounters such as these; perhaps the Unicorn will try to interfere with your quest. But, it may not, and honesty is the only guaranteed way to avoid provoking it.
 
-&quot;I come seeking &lt;&lt;if $plant_known is 1&gt;&gt;the magic moon flower&lt;&lt;else&gt;&gt;a magic elixir&lt;&lt;/if&gt;&gt;, for the Majesty. Their Majesticness would like to be safe from all ailments,&quot; you reply.
+&quot;I come seeking &lt;&lt;if $plant_known == 1&gt;&gt;the magic moon flower&lt;&lt;else&gt;&gt;a magic elixir&lt;&lt;/if&gt;&gt;, for the Majesty. Their Majesticness would like to be safe from all ailments,&quot; you reply.
 
-&quot;Thou shalt not continue in ignorance. For this Majesty to fulfill this wish most terrible, thou wouldst pluck the moon flower which provides this Forest with that magick which feeds it; should the flower be uprooted, the Forest would wither with the magic.&quot; The Unicorn spoke as grandly as it looked, and there was a lot of information to take in there. &lt;&lt;if $plant_known is 0&gt;&gt;Such as the fact that you needed a flower for the elixir. That&#39;s good to know.&lt;&lt;/if&gt;&gt;
+&quot;Thou shalt not continue in ignorance. For this Majesty to fulfill this wish most terrible, thou wouldst pluck the moon flower which provides this Forest with that magick which feeds it; should the flower be uprooted, the Forest would wither with the magic.&quot; The Unicorn spoke as grandly as it looked, and there was a lot of information to take in there. &lt;&lt;if $plant_known == 0&gt;&gt;Such as the fact that you needed a flower for the elixir. That&#39;s good to know.&lt;&lt;/if&gt;&gt;
 
-And of course, such a grandiose creature could not content itself with saying so --  well, not &lt;italics&gt;little&lt;/italics&gt;, but perhaps by its standards? Regardless, as it leaves you to your rest, it gives you these parting words.
+And of course, such a grandiose creature could not content itself with saying so --  well, not little, but perhaps by its standards? Regardless, as it leaves you to your rest, it gives you these parting words.
 
 &quot;If thou plucks the moon flower, thou dost condemn thine self and thy home to the Forest&#39;s fate. The threads of Fate are interwoven; cut one, and the rest unravels.&quot;
 
@@ -395,9 +393,9 @@ With those dire portents in mind, you go to [[sleep|Post-Unicorn]].
 The morning comes, and you rise with the sun as it crests the treetops. It&#39;s time for you to continue your journey further into the Forest.
 
 Luckily, it doesn&#39;t take much longer before you arrive at a [[pond|The Pond]].
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="Give Up" tags="end" position="323,547" size="100,100">You decide you aren&#39;t cut out for this whole &quot;questing&quot; thing. It&#39;s a little stressful. You return home to your village, and are summarily executed by the Majesty for your failure to complete the quest.</tw-passagedata><tw-passagedata pid="29" name="Turn Back" tags="" position="3,972" size="100,100">You try to turn back, to find your way home. You begin to catch glimpses of &lt;&lt;if $unicorn is 1&gt;&gt;the &lt;text&gt;Unicorn&lt;text&gt;&lt;&lt;else&gt;&gt;the silvery shimmers&lt;&lt;/if&gt;&gt; again, which seems to be leading you somewhere. With no other markings to follow, this seems as good as anything. You follow.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="Give Up" tags="end" position="323,547" size="100,100">You decide you aren&#39;t cut out for this whole &quot;questing&quot; thing. It&#39;s a little stressful. You return home to your village, and are summarily executed by the Majesty for your failure to complete the quest.</tw-passagedata><tw-passagedata pid="29" name="Turn Back" tags="" position="3,972" size="100,100">You try to turn back, to find your way home. You begin to catch glimpses of &lt;&lt;if $unicorn == 1&gt;&gt;the Unicorn&lt;&lt;else&gt;&gt;the silvery shimmers&lt;&lt;/if&gt;&gt; again, which seems to be leading you somewhere. With no other markings to follow, this seems as good as anything. You follow.
 
-As if &lt;&lt;if $unicorn is 1&gt;&gt;the &lt;text&gt;Unicorn&lt;text&gt; knows&lt;&lt;else&gt;&gt;the shimmers know&lt;&lt;/if&gt;&gt; your desire to be free, &lt;&lt;if $unicorn is 1&gt;&gt;it&lt;&lt;else&gt;&gt;they&lt;&lt;/if&gt;&gt; lead you through the thinning trees, until you reach the edge of the Forest.
+As if &lt;&lt;if $unicorn == 1&gt;&gt;the Unicorn knows&lt;&lt;else&gt;&gt;the shimmers know&lt;&lt;/if&gt;&gt; your desire to be free, &lt;&lt;if $unicorn == 1&gt;&gt;it&lt;&lt;else&gt;&gt;they&lt;&lt;/if&gt;&gt; lead you through the thinning trees, until you reach the edge of the Forest.
 
 You look out, excited to return home after so long lost in the Forest, but then... well, this isn&#39;t your home at all. It&#39;s a village, but it doesn&#39;t look anything like the one you&#39;re from, and there&#39;s not a glimpse to be had of the Majesty&#39;s castle or the looming Mountain. The houses, even, are different from what your used to. 
 
@@ -420,45 +418,48 @@ Would you like to [[keep wading|Keep Wading]] or [[remove your armor|No Armor]]?
 
 It does set you off balance, though, and the water has grown deeper here. You totter for a moment, and the topple forward into the Kelpie&#39;s hungry mouth, as it drags you down into the deeper portion of the Pond, where you die.</tw-passagedata><tw-passagedata pid="33" name="Sally Forth" tags="" position="453,632" size="100,100">&lt;&lt;if $trapped&gt;&gt;Weary and battered, you face the new day with determination, setting off in your new direction.&lt;&lt;else&gt;&gt;You sally forth into the new dawn with renewed vigor. Today, you are quite certain you will complete your quest and save the prince.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $direction is &quot;left&quot;&gt;&gt;
-It doesn&#39;t take long, though, that you come across a great tree felled across your path. Surely, only something as mighty as a fearsome [griffon]Griffon[/griffon] could cause such destruction! This is a sure sign you are on the right path -- though that path is currently blocked. How will you proceed? 
+It doesn&#39;t take long, though, that you come across a great tree felled across your path. Surely, only something as mighty as a fearsome Griffon could cause such destruction! This is a sure sign you are on the right path -- though that path is currently blocked. How will you proceed? 
 
-&lt;&lt;elseif $direction is &quot;forward&quot;&gt;&gt;
+&lt;&lt;elseif $direction == &quot;forward&quot;&gt;&gt;
 As the day reaches its peak, you, too, reach one -- a peak of boulders, blocking your route ahead. An avalanche, perhaps, from the nearby mountain, and likely a sign you are on the right path. The only question now is how you will handle your approach, as unsteady as such things can be.
 
-&lt;&lt;elseif $direction is &quot;right&quot;&gt;&gt;
+&lt;&lt;elseif $direction == &quot;right&quot;&gt;&gt;
 It is a long while of walking before you reach a cliff. The trees have thinned, growing smaller, and you have found yourself looking up at a rock wall. Nothing a quester of your caliber can&#39;t handle, of course, especially in pursuit of your most noble quarry.
 
 &lt;&lt;/if&gt;&gt;
-[[Climb]] or [[Go Around]]</tw-passagedata><tw-passagedata pid="34" name="Climb" tags="" position="503,785" size="100,100">&lt;&lt;if $direction is &quot;left&quot;&gt;&gt;
-&lt;&lt;if $approach is true&gt;&gt;The nest is not your focus. You must find the Griffon and the Prince. You continue around the tree and push back onto some semblance of a path.&lt;&lt;else&gt;&gt;You ascend up the side of the great tree, using its many broken branches and your sword to steady yourself.&lt;&lt;/if&gt;&gt; You look ahead, up the path, and there lies the fallen [griffon]Griffon[/griffon]! 
+[[Climb]] or [[Go Around]]</tw-passagedata><tw-passagedata pid="34" name="Climb" tags="" position="503,785" size="100,100">&lt;&lt;if $direction == &quot;left&quot;&gt;&gt;
+&lt;&lt;if $approach is true&gt;&gt;The nest is not your focus. You must find the Griffon and the Prince. You continue around the tree and push back onto some semblance of a path.&lt;&lt;else&gt;&gt;You ascend up the side of the great tree, using its many broken branches and your sword to steady yourself.&lt;&lt;/if&gt;&gt; You look ahead, up the path, and there lies the fallen Griffon! 
 
 [[Approach the Griffon]] [[Flee the Griffon]]
 
-&lt;&lt;elseif $direction is &quot;forward&quot;&gt;&gt;
+&lt;&lt;elseif $direction == &quot;forward&quot;&gt;&gt;
 The best path is directly onward, after all! You begin to scale the great boulders and packed rubble before you, but as you reach the top, one of the boulders shifts -- you fall within the gap, and are caught between the rocks! How will you escape this situation?
 
 [[Shed Armor|Avalanche Trap][$armor to false]] [[Lever Sword|Avalanche Trap][$armor to true]]
-&lt;&lt;elseif $direction is &quot;right&quot;&gt;&gt;
+&lt;&lt;elseif $direction == &quot;right&quot;&gt;&gt;
 You set off up the cliff. It is difficult to scale in armor, but you are strong, and prepared for difficult things such as this. You reach the top eventually, finding yourself solidly on the Mountain.
 
 [[Explore the Clifftop]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Relight" tags="" position="747,371" size="100,100">You relight your torch, but have little to prevent it from being blown out again. Still, you manage to travel a ways before that fate comes to pass, listening to the wind in your ears as it grows fiercer and more insistent -- it wants you to stop. {set dawn to 1}
 
-[[Stop for the night|Wait]] [[Keep Going|Darkness]]</tw-passagedata><tw-passagedata pid="36" name="Go Around" tags="" position="624,733" size="100,100">&lt;&lt;if $direction is &quot;left&quot;&gt;&gt;
-You begin to make your way around the great tree, and though you must stray from your path to do so the trunk will serve as your guide, even in this inhospitable Forest. You come up to the tree&#39;s peak, and ahead, you glimpse a great wall of branches caught within the trees. Surely, this is the remains of the [griffon]Griffon&#39;s[/griffon] nest! 
-[[Continue Along the Path|Climb][$around is true]] [[Investigate the Nest]]
+[[Stop for the night|Wait]] [[Keep Going|Darkness]]</tw-passagedata><tw-passagedata pid="36" name="Go Around" tags="" position="624,733" size="100,100">&lt;&lt;if $direction == &quot;left&quot;&gt;&gt;
+You begin to make your way around the great tree, and though you must stray from your path to do so the trunk will serve as your guide, even in this inhospitable Forest. You come up to the tree&#39;s peak, and ahead, you glimpse a great wall of branches caught within the trees. Surely, this is the remains of the Griffon&#39;s= nest! 
+[[Continue Along the Path|Climb][$around to true]] [[Investigate the Nest]]
 
-&lt;&lt;elseif $direction is &quot;forward&quot;&gt;&gt;
+&lt;&lt;elseif $direction == &quot;forward&quot;&gt;&gt;
 Indeed, no reason for unnecessary risk! Your quest is difficult enough as it is. You traverse around the rocks, though you have to stray far from your initial path. 
 
 You come upon a cliff, with only one clear path forward.
 
 [[Go Up the Mountain]]
 
-&lt;&lt;elseif $direction is &quot;right&quot;&gt;&gt;
+&lt;&lt;elseif $direction == &quot;right&quot;&gt;&gt;
+You begin walking around, but it is a Mountain, and thus very difficult to do on account of how large it is.
 
+[[Go Up the Mountain]]
+[[Keep Trying|Hole]]
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="Darkness" tags="" position="716,551" size="100,100">You are a brave and strong quester, and some Wind and Darkness will not get the better of you! You trudge onward, head down against the strengthening wind, refusing to bow to the Forest&#39;s whims. {describe forest destruction} You press on... and on.... and on..... 
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="Darkness" tags="" position="716,551" size="100,100">You are a brave and strong quester, and some Wind and Darkness will not get the better of you! You trudge onward, head down against the strengthening wind, refusing to bow to the Forest&#39;s whims. Around you is the cracking and crashing of the trees as branches and trunks snap and fall to the ground. You press on... and on.... and on..... 
 
 [[Until Dawn Breaks|Dawn]]</tw-passagedata><tw-passagedata pid="38" name="Trapped!" tags="" position="1057,461" size="100,100">&lt;&lt;set $trapped to true&gt;&gt;Trapped! All your perseverance has found you encircled by trees conquered by the night&#39;s windstorm, as they were far less powerful and enduring then you! Yet another obstacle a mighty quester must overcome in order to defeat the Griffon -- and save the Prince, of course. Pondering this situation, you come to the conclusion that you must either carve your way out, or attempt to climb.
 
@@ -474,37 +475,38 @@ You come upon a cliff, with only one clear path forward.
 
 </tw-passagedata><tw-passagedata pid="42" name="Dawn" tags="" position="861,575" size="100,100">You are, without question, weary, but what is a quest without hardship? You have boldly pressed on in spite of your adversary, and now, as light begins to filter through the trees and the wind steadily abates, you see what &lt;&lt;if $dawn is 1&gt;&gt;[[that has earned you.|Trapped!]]&lt;&lt;else&gt;&gt;[[that has earned you.|Deep Forest]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="Wait" tags="" position="866,461" size="100,100">You hunker down for the rest of the night, finding refuge in your bedroll from the howling wind. When morning comes, it comes with a break in the storm.
 
-[[Sally Forth]]</tw-passagedata><tw-passagedata pid="44" name="Flee the Griffon" tags="" position="718,1063" size="100,100">You turn around and flee back home, too frightened by the sight of that terrible creature, even fallen, to think of anything else. The Majesty orders you executed for your failure.</tw-passagedata><tw-passagedata pid="45" name="Approach the Griffon" tags="" position="589,983" size="100,100">&lt;&lt;if $around is  true&gt;&gt;
-The nest is not your focus. You must find the Griffon and the Prince. You continue around the tree and push back onto some semblance of a path, where you see the fallen [griffon]Griffon[/griffon] upon the path.
+[[Sally Forth]]</tw-passagedata><tw-passagedata pid="44" name="Flee the Griffon" tags="end" position="714,1063" size="100,100">You turn around and flee back home, too frightened by the sight of that terrible creature, even fallen, to think of anything else. The Majesty orders you executed for your failure.</tw-passagedata><tw-passagedata pid="45" name="Approach the Griffon" tags="" position="589,983" size="100,100">&lt;&lt;if $around == true&gt;&gt;
+The nest is not your focus. You must find the Griffon and the Prince. You continue around the tree and push back onto some semblance of a path, where you see the fallen Griffon upon the path.
 &lt;&lt;/if&gt;&gt;
-You move towards the [griffon]Griffon[/griffon], sword at the  ready. As you get closer, you see that one of its wings is broken, tangled within fallen branches. Its body barely moves with each breath. 
+You move towards the Griffon, sword at the  ready. As you get closer, you see that one of its wings is broken, tangled within fallen branches. Its body barely moves with each breath. 
 
-[[Finish it||Handle Griffon][$approach to &quot;slay&quot;]] [[Leave it||Handle Griffon][$approach to &quot;spare&quot;]]</tw-passagedata><tw-passagedata pid="46" name="Handle Griffon" tags="" position="586,1163" size="100,100">&lt;&lt;if $approach is &quot;slay&quot;&gt;&gt;
+[[Finish it|Handle Griffon][$approach to &quot;slay&quot;]] [[Leave it|Handle Griffon][$approach to &quot;spare&quot;]]</tw-passagedata><tw-passagedata pid="46" name="Handle Griffon" tags="" position="586,1163" size="100,100">&lt;&lt;if $approach == &quot;slay&quot;&gt;&gt;
 You land the killing blow, putting it out of its misery. &lt;&lt;else&gt;&gt;
 It will die soon enough regardless. &lt;&lt;/if&gt;&gt;You need to find the Prince now.
 
 [[Investigate Your Surroundings]] [[Set Off For the Mountainside|Go Up the Mountain]]</tw-passagedata><tw-passagedata pid="47" name="Investigate Your Surroundings" tags="" position="594,1283" size="100,100">There&#39;s no sign of the Prince, even in the wreckage of what might have been a nest, once. All you can gather from your investigation is that some of the nest materials must have come from the Mountain; there are branches that don&#39;t match the types of trees that grow in the Forest.
 
-[[Return to Majesty]] [[Go Up the Mountain]]</tw-passagedata><tw-passagedata pid="48" name="Return to Majesty" tags="end" position="718,1320" size="100,100">You return to the Majesty and inform them of your findings. &lt;&lt;if approach is &quot;slay&quot;&gt;&gt;You hand over a trophy from the Griffon to prove that it is dead. Despite lacking in other ways, the Majesty has mercy on you for this small success and banishes you instead of executing you.&lt;&lt;else&gt;&gt;Without proof of so much as a dead Griffon, the Majesty declares you a failure and executes you.&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="Go Up the Mountain" tags="" position="732,1192" size="100,100">&lt;&lt;if $chick is &quot;pickup&quot;&gt;&gt;Though it is a strain with the chick, y&lt;&lt;else&gt;&gt;Y&lt;&lt;/if&gt;&gt;ou ascend the cliff until you reach the ledge, succcessfully pulling yourself up over the edge. 
+[[Return to Majesty]] [[Go Up the Mountain]]</tw-passagedata><tw-passagedata pid="48" name="Return to Majesty" tags="end" position="719,1310" size="100,100">You return to the Majesty and inform them of your findings. &lt;&lt;if approach is &quot;slay&quot;&gt;&gt;You hand over a trophy from the Griffon to prove that it is dead. Despite lacking in other ways, the Majesty has mercy on you for this small success and banishes you instead of executing you.&lt;&lt;else&gt;&gt;Without proof of so much as a dead Griffon, the Majesty declares you a failure and executes you.&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="Go Up the Mountain" tags="" position="732,1192" size="100,100">&lt;&lt;if $chick == &quot;pickup&quot;&gt;&gt;Though it is a strain with the chick, y&lt;&lt;else&gt;&gt;Y&lt;&lt;/if&gt;&gt;ou ascend the cliff until you reach the ledge, succcessfully pulling yourself up over the edge. 
 
 [[Explore the Clifftop]]</tw-passagedata><tw-passagedata pid="50" name="Investigate the Nest" tags="" position="780,806" size="100,100">You approach the remains of the nest. Within is a mewling Griffon hatchling, stranded on the ground. Though it is large, perhaps even as large as you, it is easy prey on the ground. There is no sign of the Prince or of the Griffon&#39;s parents. 
 
 [[Kill the Chick|Handle Chick][$chick to &quot;kill&quot;]] 
 [[Pick Up the Chick|Handle Chick][$chick to &quot;pickup&quot;]] 
-[[Continue Around the Tree|Climb][$around to true]]</tw-passagedata><tw-passagedata pid="51" name="Handle Chick" tags="" position="903,929" size="100,100">&lt;&lt;if $chick is &quot;kill&quot;&gt;&gt;
+[[Continue Around the Tree|Climb][$around to true]]</tw-passagedata><tw-passagedata pid="51" name="Handle Chick" tags="" position="903,929" size="100,100">&lt;&lt;if $chick == &quot;kill&quot;&gt;&gt;
 You look at the small, shuddering thing. Alone, it will stand no chance of survival out here. If you don&#39;t kill it, something else probaby will. But you have  a sword and no reason to give it that chance. You drive your blade through its neck, taking a claw as your trophy.
 &lt;&lt;else&gt;&gt;
 The chick is nearly as large as you, and won&#39;t be easy to carry. Still, maybe you can use it as a distraction when you fight the Griffon? Or you could try taking it home -- either for yourself, or as an offering for the Majesty.
 &lt;&lt;/if&gt;&gt;
 Your quest isn&#39;t complete, but it&#39;s clear that the Prince isn&#39;t here.
 
-[[Continue]]  [[Go Home]]</tw-passagedata><tw-passagedata pid="52" name="Continue" tags="" position="865,1048" size="100,100">You don&#39;t have to travel much farther to see the corpse of the Griffon ahead of you on the trail, with no sign of the Prince. The only question now is where you will go from here. &lt;&lt;if $chick is &quot;pickup&quot;&gt;&gt;The chick will make your travels more difficult, but you can strap it to your back to keep moving.&lt;&lt;/if&gt;&gt;
+[[Continue]]  [[Go Home]]</tw-passagedata><tw-passagedata pid="52" name="Continue" tags="" position="865,1048" size="100,100">You don&#39;t have to travel much farther to see the corpse of the Griffon ahead of you on the trail, with no sign of the Prince. The only question now is where you will go from here. &lt;&lt;if $chick == &quot;pickup&quot;&gt;&gt;The chick will make your travels more difficult, but you can strap it to your back to keep moving.&lt;&lt;/if&gt;&gt;
 
 [[Go Home][$dead_griffon to true]] [[Check the Mountain|Go Up the Mountain]]
-</tw-passagedata><tw-passagedata pid="53" name="Go Home" tags="end" position="999,1050" size="100,100">&lt;&lt;if $chick is &quot;kill&quot;&gt;&gt;You return to the Majesty and inform them of your findings. You hand over a trophy from the Griffon chick to prove that it is dead&lt;&lt;if $dead_griffon&gt;&gt;, and report on the corpse of the parent&lt;&lt;/if&gt;&gt;. Despite lacking in other ways, the Majesty has mercy on you for this small success and banishes you instead of executing you.
+</tw-passagedata><tw-passagedata pid="53" name="Go Home" tags="end" position="999,1050" size="100,100">&lt;&lt;if $chick == &quot;kill&quot;&gt;&gt;You return to the Majesty and inform them of your findings. You hand over a trophy from the Griffon chick to prove that it is dead&lt;&lt;if $dead_griffon&gt;&gt;, and report on the corpse of the parent&lt;&lt;/if&gt;&gt;. Despite lacking in other ways, the Majesty has mercy on you for this small success and banishes you instead of executing you.
 &lt;&lt;else&gt;&gt;As you travel, you have plenty of time to decide what to do, exactly, with the chick. Though you haven&#39;t found the Prince, the Majesty might find a Griffon chick a suitable trophy to allow you to continue serving as a Quester; one has never been kept by a Majesty before. Of course, if you want to keep the chick, going back to town probably isn&#39;t an option.&lt;&lt;if $dead_griffon&gt;&gt; You did only see one dead Griffon, though, so maybe another one will come looking for it.&lt;&lt;/if&gt;&gt;
 
-[[Bring the Chick to the Majesty]] [[Make a Home in the Forest with the Chick|Raise Chick]]
+[[Bring the Chick to the Majesty]] 
+[[Make a Home in the Forest with the Chick|Raise Chick]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="Avalanche Trap" tags="" position="652,862" size="100,100">&lt;&lt;if $armor is true&gt;&gt;&lt;&lt;set $sword to false&gt;&gt;You wield your sword as a lever, pushing the rocks out from around you. Unfortunately, in doing so, you break your sword, but you do manage to get out of the pile of rocks.
 
 You can continue attempting to scale this rock wall, or perhaps you can get back on more solid ground in order to continue your quest.
@@ -517,7 +519,7 @@ Perhaps the rocks have settled enough that it wouldn&#39;t be so terrible to kee
 [[Another Tumble|Hole]]&lt;&lt;else&gt;&gt;You continue climbing over the remnants of the avalanche, significantly nimbler without your armor. The climb proves no trouble at all for you now. 
 
 [[Successful Ascent?|Go Up the Mountain]]&lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="56" name="Hole" tags="" position="1219,624" size="100,100">&lt;&lt;if $location is &quot;forest&quot;&gt;&gt;As the dirt settles around you, you realize you have found yourself in a small cave underground.&lt;&lt;else&gt;&gt;You realize you have landed in a small underground cave.&lt;&lt;/if&gt;&gt; There are tunnels leading off into a variety of directions.
+</tw-passagedata><tw-passagedata pid="56" name="Hole" tags="" position="1219,624" size="100,100">&lt;&lt;if $location == &quot;forest&quot;&gt;&gt;As the dirt settles around you, you realize you have found yourself in a small cave underground.&lt;&lt;else&gt;&gt;You realize you have landed in a small underground cave.&lt;&lt;/if&gt;&gt; There are tunnels leading off into a variety of directions.
 
 [[Left|Hole Tunnels]]
 [[Forward|Hole Tunnels]]
@@ -532,7 +534,7 @@ A while into your labor, you hear another sound; softer than an avalanche, at le
 
 [[Stop Working and Get Your Sword]]  [[Keep Working]]
 </tw-passagedata><tw-passagedata pid="60" name="To Battle!" tags="" position="1004,116" size="100,100">You raise your sword and charge! &lt;&lt;if $armor&gt;&gt;You &lt;&lt;else&gt;&gt;Though armorless, you &lt;&lt;/if&gt;&gt;have no doubt you could defeat any of these ruffians in single combat. Unfortunately, this is not single combat, and is thus quite difficult. 
-&lt;&lt;if $spoken is true&gt;&gt;&lt;&lt;set $injured to -1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $injured to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $spoken == true&gt;&gt;&lt;&lt;set $injured to -1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $injured to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 Nevertheless, a Quester of your caliber is sure to -- they&#39;re swinging swords back at you!
 
 [[Dodge]] [[Block]]</tw-passagedata><tw-passagedata pid="61" name="Call Out to Them" tags="" position="762,135" size="100,100">You call out to the Bandits, demanding that they stop ransacking your camp and leave the townspeople be. One of them is already holding your armor; another, your supply pack. The third turns in response to your words, holding a sword far more battered than your own.
@@ -543,7 +545,7 @@ The Bandit makes bold claims, ones that insult your honorable profession and the
 
 [[Invite Further Conversation]] [[To Battle!]]</tw-passagedata><tw-passagedata pid="62" name="Main Path" tags="" position="869,249" size="100,100">You trek onwards, undeterred. This path is well-traveled, and thus relatively easy to traverse even in the darkness. You follow the path, spiralling further and further up the Mountain, even as you hear rumbling behind you and feel the ground shaking below you. Even once it stops.
 
-[[To the Top!]] [[Explore Crevasses]]</tw-passagedata><tw-passagedata pid="63" name="Side Path" tags="" position="963,354" size="100,100">The side path is precarious,&lt;&lt;if $day is false&gt;&gt; and in the night even more so,&lt;&lt;/if&gt;&gt; but a brave Quester such as yourself can not be deterred by such small concerns! You trudge onwards.
+[[To the Top!]] [[Explore Crevasses]]</tw-passagedata><tw-passagedata pid="63" name="Side Path" tags="" position="963,354" size="100,100">The side path is precarious,&lt;&lt;if $day == false&gt;&gt; and in the night even more so,&lt;&lt;/if&gt;&gt; but a brave Quester such as yourself can not be deterred by such small concerns! You trudge onwards.
 
 The ground is uneven, though, and eventually begins to shake. The loose gravel below you begins to slide, and you with it!
 
@@ -553,7 +555,8 @@ Having seen all of this, the Bandits took it upon themselves to become a problem
 &lt;&lt;set $armor to false&gt;&gt;
 [[How Dare They!|To Battle!][$spoken to true]] [[Take Their Invitation to Join Them|Join Bandits]]</tw-passagedata><tw-passagedata pid="65" name="Join Bandits" tags="" position="1023,9" size="100,100">You take them up on their offer to join them, and the trio of Bandits becomes a quartet. But was your offer sincere, or do you simply seek to betray them?
 
-[[Joining Genuinely]] [[The Traitor&#39;s Plot]]</tw-passagedata><tw-passagedata pid="66" name="Joining Genuinely" tags="end" position="1240,5" size="100,100">Indeed, knowing the crimes of the Majesty against your fellow Questers and the townsfolk has swayed you to their cause. You spend the rest of your days accompanying them on mock raids of the village, where few are harmed and only what you need to subsist on is stolen. Eventually, more Questers are sent after you; to each one willing to speak, you offer the choice to join you. Some, though, you kill.
+[[Joining Genuinely]] 
+[[The Traitor&#39;s Plot]]</tw-passagedata><tw-passagedata pid="66" name="Joining Genuinely" tags="end" position="1240,5" size="100,100">Indeed, knowing the crimes of the Majesty against your fellow Questers and the townsfolk has swayed you to their cause. You spend the rest of your days accompanying them on mock raids of the village, where few are harmed and only what you need to subsist on is stolen. Eventually, more Questers are sent after you; to each one willing to speak, you offer the choice to join you. Some, though, you kill.
 
 Your numbers grow, until you have a small force encamped in the Forest. You begin planning for the final raid; the one that means to take out the Majesty, and to put control of their lives into the hands of the townspeople. You hope to see a free village in your lifetime.</tw-passagedata><tw-passagedata pid="67" name="The Traitor&#39;s Plot" tags="" position="1259,114" size="100,100">Of course, you are loyal to the Majesty to the end. You have a quest to complete, and their words will not truly sway you. You simply would like to get close to them to stab them in the back; after all, their armor is a far lesser quality than your own.
 
@@ -569,7 +572,7 @@ But they do renew it, and you must respond.
 [[Strike Back]] [[Flee the Bandits]]
 </tw-passagedata><tw-passagedata pid="70" name="Block" tags="" position="1133,116" size="100,100">You raise your blade to block the blow, &lt;&lt;if $armor&gt;&gt;your armor protecting you from what would have been an unfortunate wound. &lt;&lt;else&gt;&gt;but your lack of armor means that you are still shaken and weakened by it.&lt;&lt;set $injured += 1&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $armor is false&gt;&gt;No matter, though! &lt;&lt;/if&gt;&gt;You are a strong Quester, able to endure your foes strikes -- and to take the opportunities that arise!
+&lt;&lt;if $armor == false&gt;&gt;No matter, though! &lt;&lt;/if&gt;&gt;You are a strong Quester, able to endure your foes strikes -- and to take the opportunities that arise!
 
 [[Strike Back]] [[Flee the Bandits]]</tw-passagedata><tw-passagedata pid="71" name="Strike Back" tags="end" position="1293,260" size="100,100">&lt;&lt;set $injured += 1&gt;&gt;
 &lt;&lt;if $injured is 2&gt;&gt;
@@ -584,7 +587,7 @@ But what they said to you before lingers in your mind... perhaps returning to th
 [[Go Home to Collect Your Reward]] [[Remain on the Mountain]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="72" name="Flee the Bandits" tags="end" position="1406,177" size="100,100">Rather than risk an end at the hands of the Bandits, you take off up the Mountain, evading their blows. You keep going, and you don&#39;t look back. 
 
-You don&#39;t stop until you reach the top of the Mountain. Wary and fearful still, you begin creating fortifications for yourself, to ensure that no one can attack you. You reside within your barricades, ever-sheltering, becoming the Hermit.</tw-passagedata><tw-passagedata pid="73" name="Remain on the Mountain" tags="end" position="1516,279" size="100,100">&lt;&lt;if $quest is &quot;bandit&quot;&gt;&gt;The Bandits have rattled you. &lt;&lt;if $spoken&gt;&gt;Their words ring true. &lt;&lt;/if&gt;&gt;You decide that rather than returning to the Majesty and your life as a Quester, you can take up a living here, in the Mountain. Their camp has supplies, which you collect, before climbing further; if you were able to reach the Bandits here, another Quester could likely reach you.
+You don&#39;t stop until you reach the top of the Mountain. Wary and fearful still, you begin creating fortifications for yourself, to ensure that no one can attack you. You reside within your barricades, ever-sheltering, becoming the Hermit.</tw-passagedata><tw-passagedata pid="73" name="Remain on the Mountain" tags="end" position="1516,279" size="100,100">&lt;&lt;if $quest == &quot;bandit&quot;&gt;&gt;The Bandits have rattled you. &lt;&lt;if $spoken&gt;&gt;Their words ring true. &lt;&lt;/if&gt;&gt;You decide that rather than returning to the Majesty and your life as a Quester, you can take up a living here, in the Mountain. Their camp has supplies, which you collect, before climbing further; if you were able to reach the Bandits here, another Quester could likely reach you.
 
 You become the Hermit, living at the top of the Mountain, with only the Drake and the Griffons for company.&lt;&lt;else&gt;&gt;Haunted by your failure, you know you mustn&#39;t return to the Majesty. You retreat into the Mountain, making your living as another creature of the caves. You hope the Majesty doesn&#39;t send another Quester after you. You hope that no one sees you ever again.&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="Return Without the Elixir" tags="end" position="456,1197" size="100,100">You return home, and your failure to bring the Majesty their elixir results in them announcing your execution. </tw-passagedata><tw-passagedata pid="75" name="To the Top!" tags="" position="1549,391" size="100,100">&lt;&lt;if $camp_known is false&gt;&gt;Surely the Bandits would make their camp upon the most defensible part of the Mountain!&lt;&lt;else&gt;&gt;Caught up in the euphoria of Mountain climbing, you ignore the fact that the Bandit camp is not anywhere near the top.&lt;&lt;/if&gt;&gt; It is a strain, but one that delights you with the challenge. You steadily approach the peak.
 
@@ -596,7 +599,8 @@ When you reach it, there is &lt;&lt;if $camp_known&gt;&gt;of course &lt;&lt;/if&
 
 It reveals an intersection, of sorts. There&#39;s a path curving upwards, and a path curving downwards. The tunnels are neatly made; it&#39;s likely something lives down here. &lt;&lt;if $camp_known&gt;&gt;When you fell, the Bandits&#39; camp was &lt;&lt;if $up_top&gt;&gt;certainly below you, but you seem to have fallen quite far.&lt;&lt;else&gt;&gt;roughly on the same level as you, if not higher.&lt;&lt;/if&gt;&gt;
 
-[[Upwards Path]] [[Downwards Path]]</tw-passagedata><tw-passagedata pid="78" name="Upwards Path" tags="" position="1341,476" size="100,100">You set off up the tunnel. For a while, there is nothing but the tunnel; it seems endless. It isn&#39;t, though, which becomes apparent as you reach points where there are holes in the side of it, looking down and out over the Mountain, and further to the Forest and the Town. None of them have a particularly climbable surface for you, though. It seems the that whatever made these tunnels is either fond of windows or as adept at climbing as they are digging.
+[[Upwards Path]] 
+[[Downwards Path]]</tw-passagedata><tw-passagedata pid="78" name="Upwards Path" tags="" position="1341,476" size="100,100">You set off up the tunnel. For a while, there is nothing but the tunnel; it seems endless. It isn&#39;t, though, which becomes apparent as you reach points where there are holes in the side of it, looking down and out over the Mountain, and further to the Forest and the Town. None of them have a particularly climbable surface for you, though. It seems the that whatever made these tunnels is either fond of windows or as adept at climbing as they are digging.
 
 Regardless, you press on, and eventually reach a point where the view now features a small camp below you. The leap from the hole on to the path where the camp is is a small one, easy enough for a Quester of your caliber. This provides you an opportunity to get the jump on those who made this camp -- almost certainly the Bandits you are hunting.
 
@@ -623,15 +627,16 @@ Having seen all of this, the Bandits took it upon themselves to become a problem
 
 You look out the hole opposite where the Drake went, and see a small camp below you. The leap from the hole on to the path where the camp is is a small one, easy enough for a Quester of your caliber. This provides you an opportunity to get the jump on those who made this camp -- almost certainly the Bandits you are hunting.
 
-[[Surprise Attack!]] [[Remain in the Tunnels]]</tw-passagedata><tw-passagedata pid="86" name="Refuse" tags="end" position="1699,264" size="100,100">The Drake seems unsurprised by your refusal, and moves past you.
+[[Surprise Attack!]] 
+[[Remain in the Tunnels]]</tw-passagedata><tw-passagedata pid="86" name="Refuse" tags="end" position="1699,264" size="100,100">The Drake seems unsurprised by your refusal, and moves past you.
 
 You take up life underground, sharing the tunnels with the Drake. You rarely speak. You shed your armor and sword, taking instead to burrowing your own dens within the depths of the Mountain, which keeps you safe.</tw-passagedata><tw-passagedata pid="87" name="Back Down The Mountain" tags="" position="1819,354" size="100,100">You set off back down the Mountain, returning to the side path you passed by earlier, setting off up the trail.
 
-[[Side Path][$day to true]]</tw-passagedata><tw-passagedata pid="88" name="Make A Home For Yourself Here" tags="end" position="1710,434" size="100,100">Life as a Quester isn&#39;t particularly pleasant, anyways. You can make a better living for yourself here, with a fantastic view of the world below you. Not to mention that this is a perfectly fortifiable position; no one would be able to launch a successful attack on you. Indeed, the Mountain seems the perfect place to make a home -- and so, you do.</tw-passagedata><tw-passagedata pid="89" name="Explore the Clifftop" tags="" position="854,1300" size="100,100">&lt;&lt;set $injured to 0&gt;&gt;&lt;&lt;set $griffon_hp to 4&gt;&gt;&lt;&lt;set $observed to false&gt;&gt;&lt;&lt;set $griffon_down to false&gt;&gt;You look over the clifftop you have landed on, and see glowering down at you an angry Griffon... with the Prince beside it. It lets out a piercing shriek at the sight of you, &lt;&lt;if $chick is &quot;pickup&quot;&gt;&gt;and then softens at the sight of the chick, not harming you. You have an opportunity here.
+[[Side Path][$day to true]]</tw-passagedata><tw-passagedata pid="88" name="Make A Home For Yourself Here" tags="end" position="1710,434" size="100,100">Life as a Quester isn&#39;t particularly pleasant, anyways. You can make a better living for yourself here, with a fantastic view of the world below you. Not to mention that this is a perfectly fortifiable position; no one would be able to launch a successful attack on you. Indeed, the Mountain seems the perfect place to make a home -- and so, you do.</tw-passagedata><tw-passagedata pid="89" name="Explore the Clifftop" tags="" position="854,1292" size="100,100">&lt;&lt;set $injured to 0&gt;&gt;&lt;&lt;set $griffon_hp to 4&gt;&gt;&lt;&lt;set $observed to false&gt;&gt;&lt;&lt;set $griffon_down to false&gt;&gt;You look over the clifftop you have landed on, and see glowering down at you an angry Griffon... with the Prince beside it. It lets out a piercing shriek at the sight of you, &lt;&lt;if $chick is &quot;pickup&quot;&gt;&gt;and then softens at the sight of the chick, not harming you. You have an opportunity here.
 
 [[Offer the Chick in Exchange for the Prince]]
 [[Attack the Distracted Griffon]]
-[[Threaten the Chick in Exchange for the Prince]]&lt;&lt;else&gt;&gt;and attempts to &lt;&lt;if $location is &quot;forest&quot;&gt;&gt;knock you back off the cliff&lt;&lt;elseif $tunnel&gt;&gt;throw you down the Mountain&lt;&lt;else&gt;&gt;knock you down the Mountain&lt;&lt;/if&gt;&gt;!
+[[Threaten the Chick in Exchange for the Prince]]&lt;&lt;else&gt;&gt;and attempts to &lt;&lt;if $location == &quot;forest&quot;&gt;&gt;knock you back off the cliff&lt;&lt;elseif $tunnel&gt;&gt;throw you down the Mountain&lt;&lt;else&gt;&gt;knock you down the Mountain&lt;&lt;/if&gt;&gt;!
 
 [[Duck!]] 
 [[Hold On!]] 
@@ -649,9 +654,9 @@ You create a peaceful life for yourselves, and on occasion you spot the silhouet
 &lt;&lt;else&gt;&gt;Without a blade, you don&#39;t have many options here.
 
 [[Keep Holding On]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="94" name="Attempt to Strike the Griffon&#39;s Underbelly" tags="end" position="921,1553" size="100,100">&lt;&lt;if $ledge&gt;&gt;&lt;&lt;if $armor&gt;&gt;&lt;&lt;set $injured += 1&gt;&gt;&lt;&lt;set $griffon_hp -= 1&gt;&gt;Now that there is somewhere for you to land, you&#39;re willing to sacrifice your grip for a chance to strike the Griffon. Though your strike is successful, you only land a glancing blow as you crumple onto the ledge. The Griffon is not far behind, hoping to take advantage of your weakness.&lt;&lt;else&gt;&gt;&lt;&lt;set $griffon_hp -= 2&gt;&gt;Now that there is a landing place, you have plenty of maneuveribility without worrying about falling to yoru death. You drive your sword up into the Griffon&#39;s underbelly, and it shrieks in pain as it begins falling down to the ledge.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $sword&gt;&gt;
-[[Strike Again]] [[Attempt to Flee With the Prince]]
-&lt;&lt;else&gt;&gt;[[Attempt to Flee With the Prince]]&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $griffon_hp -= 1&gt;&gt;
+
+&lt;&lt;if $sword&gt;&gt;[[Strike Again]] 
+[[Attempt to Flee With the Prince]]&lt;&lt;else&gt;&gt;[[Attempt to Flee With the Prince]]&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $griffon_hp -= 1&gt;&gt;
 &lt;&lt;if $armor&gt;&gt;Your grip is already loose, but your each for your sword regardless. You only manage a small cut to the Griffon&#39;s leg as you fall, hundreds of feet to go before you hit the ground and are destroyed on impact.&lt;&lt;else&gt;&gt;It&#39;s risky, but unweighted as you are you have a chance. You land a glancing blow on the Griffon&#39;s leg while maintaining your grip, and it begins kicking at you with another one.&lt;&lt;set $injured += 1&gt;&gt;
 
 [[Keep Holding On]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="95" name="Keep Holding On" tags="" position="1049,1444" size="100,100">You maintain your grip, hoping for an opportunity to land on solid ground again. Luckily, the Griffon never meant to go far, and is circling back over the ledge where the Prince is.
@@ -711,7 +716,7 @@ You reach a point where the paths diverge; there&#39;s a tunnel into the side of
 
 [[Continue Ascending the Mountain][$armor to false]]</tw-passagedata><tw-passagedata pid="111" name="Get Out from Under the Drake and Attack" tags="" position="1648,1243" size="100,100">You&#39;ve positioned yourself well, now, as you&#39;ve distracted it. You&#39;re able to land a fatal blow to the Drake. You collect some scales and a claw as your trophies, and get to work taking down your camp before you [[Continue Ascending the Mountain][$trophies_drake to true]].</tw-passagedata><tw-passagedata pid="112" name="Ask After What It Means" tags="" position="1390,1301" size="100,100">You call out after the Drake, inquiring as to what it means about the  Griffon. Its head appears from a crevice you didn&#39;t notice previously.
 
-&quot;The Griffon&#39;s nest fell in the night, Quester.&quot; And it disappears once more. &lt;&lt;set nest_know to true&gt;&gt;You pack up your camp. 
+&quot;The Griffon&#39;s nest fell in the night, Quester.&quot; And it disappears once more. &lt;&lt;set $nest_know to true&gt;&gt;You pack up your camp. 
 &lt;&lt;if $sneak&gt;&gt;&lt;&lt;set armor to false&gt;&gt;&lt;&lt;/if&gt;&gt;
 [[Continue Ascending the Mountain]]&lt;&lt;if $sneak&gt;&gt;[[Go Back and Get Your Armor]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="113" name="Go Back and Get Your Armor" tags="" position="1274,1346" size="100,100">You ponder the Griffon&#39;s words as you pack up your camp and don your armor.
 
