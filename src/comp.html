@@ -209,12 +209,12 @@ In the morning, you must set out once more. After you break camp, which way woul
 [[To Battle!]] 
 [[Call Out to Them]]
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Keep Going" tags="" position="626,434" size="100,100">You trudge onwards, embracing the hardship of your journey. Every quest has its trials and tribulations, after all.&lt;&lt;if $quest == &quot;fetch&quot;&gt;&gt; &lt;&lt;if $plant_known == 1&gt;&gt;And the flower will only bloom tonight, so it is, in fact the perfect time for you to be marching on.&lt;&lt;/if&gt;&gt;&lt;&lt;elseif $quest is &quot;bandit&quot;&gt;&gt; Besides, who knows who these Bandits may terrorize if you give them the time to? It is your duty as a Quester to ensure they don&#39;t get the chance to. &lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Keep Going" tags="" position="626,434" size="100,100">You trudge onwards, embracing the hardship of your journey. Every quest has its trials and tribulations, after all.&lt;&lt;if $quest is &quot;fetch&quot;&gt;&gt; &lt;&lt;if $plant_known is 1&gt;&gt;And the flower will only bloom tonight, so it is, in fact the perfect time for you to be marching on.&lt;&lt;/if&gt;&gt;&lt;&lt;elseif $quest is &quot;bandit&quot;&gt;&gt; Besides, who knows who these Bandits may terrorize if you give them the time to? It is your duty as a Quester to ensure they don&#39;t get the chance to. &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $quest == &quot;fetch&quot;&gt;
+&lt;&lt;if $quest is &quot;fetch&quot;&gt;&gt;
 &lt;&lt;set $unicorn to 0&gt;&gt;
 The moonlight guides you, and you come upon a clearing, filled with [[a Pond|The Pond]].
-&lt;&lt;elseif $quest == &quot;save&quot;&gt;&gt;&lt;&lt;if $location == &quot;forest&quot;&gt;&gt;
+&lt;&lt;elseif $quest is &quot;save&quot;&gt;&gt;&lt;&lt;if $locationis &quot;forest&quot;&gt;&gt;
 You press on, the dimming light no concern of yours, as you have come well-supplied. Wielding your torch, you press on through the trees as the wind dances around you. The wind is too playful for a quest as serious as yours, in fact, and blows your torch out. How will you handle this stirring nonsense?&lt;&lt;set dawn to 0&gt;&gt;
 [[Relight Your Torch And Continue|Relight]]
 [[Ignore the Wind&#39;s Tomfoolery -- Press On In Spite of the Darkness|Darkness]] 
@@ -430,21 +430,24 @@ It is a long while of walking before you reach a cliff. The trees have thinned, 
 [[Climb]] or [[Go Around]]</tw-passagedata><tw-passagedata pid="34" name="Climb" tags="" position="503,785" size="100,100">&lt;&lt;if $direction == &quot;left&quot;&gt;&gt;
 &lt;&lt;if $approach is true&gt;&gt;The nest is not your focus. You must find the Griffon and the Prince. You continue around the tree and push back onto some semblance of a path.&lt;&lt;else&gt;&gt;You ascend up the side of the great tree, using its many broken branches and your sword to steady yourself.&lt;&lt;/if&gt;&gt; You look ahead, up the path, and there lies the fallen Griffon! 
 
-[[Approach the Griffon]] [[Flee the Griffon]]
+[[Approach the Griffon]] 
+[[Flee the Griffon]]
 
 &lt;&lt;elseif $direction == &quot;forward&quot;&gt;&gt;
 The best path is directly onward, after all! You begin to scale the great boulders and packed rubble before you, but as you reach the top, one of the boulders shifts -- you fall within the gap, and are caught between the rocks! How will you escape this situation?
 
-[[Shed Armor|Avalanche Trap][$armor to false]] [[Lever Sword|Avalanche Trap][$armor to true]]
+[[Shed Armor|Avalanche Trap][$armor to false]] 
+[[Lever Sword|Avalanche Trap][$armor to true]]
 &lt;&lt;elseif $direction == &quot;right&quot;&gt;&gt;
 You set off up the cliff. It is difficult to scale in armor, but you are strong, and prepared for difficult things such as this. You reach the top eventually, finding yourself solidly on the Mountain.
 
 [[Explore the Clifftop]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Relight" tags="" position="747,371" size="100,100">You relight your torch, but have little to prevent it from being blown out again. Still, you manage to travel a ways before that fate comes to pass, listening to the wind in your ears as it grows fiercer and more insistent -- it wants you to stop. {set dawn to 1}
 
-[[Stop for the night|Wait]] [[Keep Going|Darkness]]</tw-passagedata><tw-passagedata pid="36" name="Go Around" tags="" position="624,733" size="100,100">&lt;&lt;if $direction == &quot;left&quot;&gt;&gt;
-You begin to make your way around the great tree, and though you must stray from your path to do so the trunk will serve as your guide, even in this inhospitable Forest. You come up to the tree&#39;s peak, and ahead, you glimpse a great wall of branches caught within the trees. Surely, this is the remains of the Griffon&#39;s= nest! 
-[[Continue Along the Path|Climb][$around to true]] [[Investigate the Nest]]
+[[Stop for the night|Wait]] [[Keep Going|Darkness]]</tw-passagedata><tw-passagedata pid="36" name="Go Around" tags="" position="629,731" size="100,100">&lt;&lt;if $direction == &quot;left&quot;&gt;&gt;
+You begin to make your way around the great tree, and though you must stray from your path to do so the trunk will serve as your guide, even in this inhospitable Forest. You come up to the tree&#39;s peak, and ahead, you glimpse a great wall of branches caught within the trees. Surely, this is the remains of the Griffon&#39;s nest! 
+[[Continue Along the Path|Climb][$around to true]] 
+[[Investigate the Nest]]
 
 &lt;&lt;elseif $direction == &quot;forward&quot;&gt;&gt;
 Indeed, no reason for unnecessary risk! Your quest is difficult enough as it is. You traverse around the rocks, though you have to stray far from your initial path. 
@@ -480,7 +483,8 @@ The nest is not your focus. You must find the Griffon and the Prince. You contin
 &lt;&lt;/if&gt;&gt;
 You move towards the Griffon, sword at the  ready. As you get closer, you see that one of its wings is broken, tangled within fallen branches. Its body barely moves with each breath. 
 
-[[Finish it|Handle Griffon][$approach to &quot;slay&quot;]] [[Leave it|Handle Griffon][$approach to &quot;spare&quot;]]</tw-passagedata><tw-passagedata pid="46" name="Handle Griffon" tags="" position="586,1163" size="100,100">&lt;&lt;if $approach == &quot;slay&quot;&gt;&gt;
+[[Finish it|Handle Griffon][$approach to &quot;slay&quot;]] 
+[[Leave it|Handle Griffon][$approach to &quot;spare&quot;]]</tw-passagedata><tw-passagedata pid="46" name="Handle Griffon" tags="" position="586,1163" size="100,100">&lt;&lt;if $approach == &quot;slay&quot;&gt;&gt;
 You land the killing blow, putting it out of its misery. &lt;&lt;else&gt;&gt;
 It will die soon enough regardless. &lt;&lt;/if&gt;&gt;You need to find the Prince now.
 
@@ -499,9 +503,11 @@ The chick is nearly as large as you, and won&#39;t be easy to carry. Still, mayb
 &lt;&lt;/if&gt;&gt;
 Your quest isn&#39;t complete, but it&#39;s clear that the Prince isn&#39;t here.
 
-[[Continue]]  [[Go Home]]</tw-passagedata><tw-passagedata pid="52" name="Continue" tags="" position="865,1048" size="100,100">You don&#39;t have to travel much farther to see the corpse of the Griffon ahead of you on the trail, with no sign of the Prince. The only question now is where you will go from here. &lt;&lt;if $chick == &quot;pickup&quot;&gt;&gt;The chick will make your travels more difficult, but you can strap it to your back to keep moving.&lt;&lt;/if&gt;&gt;
+[[Continue]]  
+[[Go Home]]</tw-passagedata><tw-passagedata pid="52" name="Continue" tags="" position="865,1048" size="100,100">You don&#39;t have to travel much farther to see the corpse of the Griffon ahead of you on the trail, with no sign of the Prince. The only question now is where you will go from here. &lt;&lt;if $chick == &quot;pickup&quot;&gt;&gt;The chick will make your travels more difficult, but you can strap it to your back to keep moving.&lt;&lt;/if&gt;&gt;
 
-[[Go Home][$dead_griffon to true]] [[Check the Mountain|Go Up the Mountain]]
+[[Go Home][$dead_griffon to true]] 
+[[Check the Mountain|Go Up the Mountain]]
 </tw-passagedata><tw-passagedata pid="53" name="Go Home" tags="end" position="999,1050" size="100,100">&lt;&lt;if $chick == &quot;kill&quot;&gt;&gt;You return to the Majesty and inform them of your findings. You hand over a trophy from the Griffon chick to prove that it is dead&lt;&lt;if $dead_griffon&gt;&gt;, and report on the corpse of the parent&lt;&lt;/if&gt;&gt;. Despite lacking in other ways, the Majesty has mercy on you for this small success and banishes you instead of executing you.
 &lt;&lt;else&gt;&gt;As you travel, you have plenty of time to decide what to do, exactly, with the chick. Though you haven&#39;t found the Prince, the Majesty might find a Griffon chick a suitable trophy to allow you to continue serving as a Quester; one has never been kept by a Majesty before. Of course, if you want to keep the chick, going back to town probably isn&#39;t an option.&lt;&lt;if $dead_griffon&gt;&gt; You did only see one dead Griffon, though, so maybe another one will come looking for it.&lt;&lt;/if&gt;&gt;
 
@@ -514,7 +520,8 @@ You can continue attempting to scale this rock wall, or perhaps you can get back
 
 Perhaps the rocks have settled enough that it wouldn&#39;t be so terrible to keep climbing. There remains, of course, the option to go around now that you have escaped the rocks&#39; grasp.
 &lt;&lt;/if&gt;&gt;
-[[Climb Down and Around|Go Around]] [[Keep Climbing]]</tw-passagedata><tw-passagedata pid="55" name="Keep Climbing" tags="" position="769,931" size="100,100">&lt;&lt;if $armor&gt;&gt;You attempt to continue climbing over the remnants of the avalanche, but your armor is heavy and clunky. It&#39;s increasingly difficult to keep your footing steady... and then you can&#39;t anymore, and you begin to slip again.
+[[Climb Down and Around|Go Around]] 
+[[Keep Climbing]]</tw-passagedata><tw-passagedata pid="55" name="Keep Climbing" tags="" position="769,931" size="100,100">&lt;&lt;if $armor&gt;&gt;You attempt to continue climbing over the remnants of the avalanche, but your armor is heavy and clunky. It&#39;s increasingly difficult to keep your footing steady... and then you can&#39;t anymore, and you begin to slip again.
 
 [[Another Tumble|Hole]]&lt;&lt;else&gt;&gt;You continue climbing over the remnants of the avalanche, significantly nimbler without your armor. The climb proves no trouble at all for you now. 
 
@@ -526,13 +533,17 @@ Perhaps the rocks have settled enough that it wouldn&#39;t be so terrible to kee
 [[Right|Hole Tunnels]]
 [[Back|Hole Tunnels]]</tw-passagedata><tw-passagedata pid="57" name="Investigate the Rumbling" tags="" position="784,681" size="100,100">You arise from your bedroll and peak outside. Before you, the trail is blocked by an avalanche. It fortunately missed your tent, but it will make continuing up the Mountain quite difficult.
 
-[[Try to Dig]] [[Go Back to Sleep][$know_avalanche to true]] </tw-passagedata><tw-passagedata pid="58" name="Go Back to Sleep" tags="" position="599,615" size="100,100">You rest through the night, unperturbed. When you rise in the morning, you find the way ahead blocked by a Drake, which appears to have cut through &lt;&lt;if $know_avalanche&gt;&gt;the&lt;&lt;else&gt;&gt;an&lt;&lt;/if&gt;&gt; avalanche that occured during the night. The fearsome reptile is not to be taken lightly; its scales serve as a tough natural armor, and it is swift on its four clawed feet. You are currently unarmored, but you always keep your sword close by, and you reach for it now. 
+[[Try to Dig]] 
+[[Go Back to Sleep][$know_avalanche to true]] </tw-passagedata><tw-passagedata pid="58" name="Go Back to Sleep" tags="" position="599,615" size="100,100">You rest through the night, unperturbed. When you rise in the morning, you find the way ahead blocked by a Drake, which appears to have cut through &lt;&lt;if $know_avalanche&gt;&gt;the&lt;&lt;else&gt;&gt;an&lt;&lt;/if&gt;&gt; avalanche that occured during the night. The fearsome reptile is not to be taken lightly; its scales serve as a tough natural armor, and it is swift on its four clawed feet. You are currently unarmored, but you always keep your sword close by, and you reach for it now. 
 
-[[Charge the Drake]] [[Call Out to the Drake]] [[Sneak Around the Drake]]</tw-passagedata><tw-passagedata pid="59" name="Try to Dig" tags="" position="931,694" size="100,100">What a disaster! You don&#39;t have a shovel, or a pickaxe, but you can at least get to work moving some of these rocks -- enough to clear a path for yourself, at least. You hope. You get to work.
+[[Charge the Drake]] 
+[[Call Out to the Drake]] 
+[[Sneak Around the Drake]]</tw-passagedata><tw-passagedata pid="59" name="Try to Dig" tags="" position="931,694" size="100,100">What a disaster! You don&#39;t have a shovel, or a pickaxe, but you can at least get to work moving some of these rocks -- enough to clear a path for yourself, at least. You hope. You get to work.
 
 A while into your labor, you hear another sound; softer than an avalanche, at least. It&#39;s a light scraping, and it seems to be getting closer.
 
-[[Stop Working and Get Your Sword]]  [[Keep Working]]
+[[Stop Working and Get Your Sword]]  
+[[Keep Working]]
 </tw-passagedata><tw-passagedata pid="60" name="To Battle!" tags="" position="1004,116" size="100,100">You raise your sword and charge! &lt;&lt;if $armor&gt;&gt;You &lt;&lt;else&gt;&gt;Though armorless, you &lt;&lt;/if&gt;&gt;have no doubt you could defeat any of these ruffians in single combat. Unfortunately, this is not single combat, and is thus quite difficult. 
 &lt;&lt;if $spoken == true&gt;&gt;&lt;&lt;set $injured to -1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $injured to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 Nevertheless, a Quester of your caliber is sure to -- they&#39;re swinging swords back at you!
@@ -724,15 +735,24 @@ You reach a point where the paths diverge; there&#39;s a tunnel into the side of
 
 &quot;You have surprising skill for one so small, Quester! I will handle the rest, and you may continue your quest shortly.&quot; It then sets to digging through the loose dirt and rock blocking the path.
 
-[[Wait for the Drake to Finish]] [[Help the Drake]] [[Attack the Drake]]</tw-passagedata><tw-passagedata pid="115" name="Keep Working" tags="" position="921,813" size="100,100">You ignore the sounds and keep working, until a large lizard-like head pokes out of the Mountainside. The Drake emerges, surveying your work.
+[[Wait for the Drake to Finish]] 
+[[Help the Drake]] 
+[[Attack the Drake]]</tw-passagedata><tw-passagedata pid="115" name="Keep Working" tags="" position="921,813" size="100,100">You ignore the sounds and keep working, until a large lizard-like head pokes out of the Mountainside. The Drake emerges, surveying your work.
 
 &quot;You have surprising skill for one so small, Quester! I will handle the rest, and you may continue your quest shortly.&quot; It then sets to digging through the loose dirt and rock blocking the path.
 
-[[Wait for the Drake to Finish]] [[Help the Drake]]</tw-passagedata><tw-passagedata pid="116" name="Wait for the Drake to Finish" tags="" position="1028,930" size="100,100">You sit back and rest while the Drake works. It wasn&#39;t easy, clearing as much as you did, especially considering your sleep got interrupted in doing so. It feels good to take a break.
+[[Wait for the Drake to Finish]] 
+[[Help the Drake]]</tw-passagedata><tw-passagedata pid="116" name="Wait for the Drake to Finish" tags="" position="1028,930" size="100,100">You sit back and rest while the Drake works. It wasn&#39;t easy, clearing as much as you did, especially considering your sleep got interrupted in doing so. It feels good to take a break.
 
 While you wait, you could speak to the Drake.
 
-[[Speak to the Drake]] [[Wait Quietly][$work to false]]</tw-passagedata><tw-passagedata pid="117" name="Help the Drake" tags="" position="1160,920" size="100,100">[[Speak to the Drake]] [[Work In Silence|Wait Quietly][$work to true]]</tw-passagedata><tw-passagedata pid="118" name="Attack the Drake" tags="" position="1280,925" size="100,100">You take advantage of its distraction to position yourself next to its leg and strike at its vulnerable point, killing it in a single blow. It was easier than you expected. The Drake even looks surprised, as it stops breathing. 
+[[Speak to the Drake]] 
+[[Wait Quietly][$work to false]]</tw-passagedata><tw-passagedata pid="117" name="Help the Drake" tags="" position="1160,920" size="100,100">You take up the work of clearing the avalanche alongside the Drake. It wasn&#39;t easy, clearing as much as you did, but with help it is now almost relaxing.
+
+While you work, you could speak to the Drake.
+
+[[Speak to the Drake]] 
+[[Work In Silence|Wait Quietly][$work to true]]</tw-passagedata><tw-passagedata pid="118" name="Attack the Drake" tags="" position="1280,925" size="100,100">You take advantage of its distraction to position yourself next to its leg and strike at its vulnerable point, killing it in a single blow. It was easier than you expected. The Drake even looks surprised, as it stops breathing. 
 
 From its corpse you collect your trophies to prove your deed. It will be difficult, but you can continue clearing the path yourself. &lt;&lt;set $trophies_drake to true&gt;&gt;
 
@@ -783,7 +803,7 @@ It falls to your onslaught. You are left standing over its corpse, and the Princ
 &quot;Thou hast come to steal my prize, Quester. That is reason enough.&quot;
 
 [[Accept That You Must Fight]]
-[[Try to Convince the Griffon That Bloodshed is Pointless]]</tw-passagedata><tw-passagedata pid="132" name="Accept Your Reward" tags="end" position="1153,1752" size="100,100">You return to the Majesty, Prince in tow, to accept your reward for a quest well-completed. You are rewarded lavishly for your service until the time for your next quest arrives.</tw-passagedata><tw-passagedata pid="133" name="Abandon the Prince" tags="end" position="1264,1736" size="100,100">You ignore the Prince. You ignore the Griffon&#39;s corpse. You turn away and walk off into the tunnels, going deeper and deeper and deeper, until there is no sign of light. You don&#39;t emerge.</tw-passagedata><tw-passagedata pid="134" name="Accept That You Must Fight" tags="" position="1542,1603" size="100,100">It&#39;s unfortunate, but you accept that you must fight, and prepare yourself for it. The Griffon sees your resolve and takes to the air, swooping at you.
+[[Try to Convince the Griffon That Bloodshed is Pointless]]</tw-passagedata><tw-passagedata pid="132" name="Accept Your Reward" tags="end" position="1153,1752" size="100,100">You return to the Majesty, Prince in tow, to accept your reward for a quest well-completed. You are rewarded lavishly for your service until the time for your next quest arrives.</tw-passagedata><tw-passagedata pid="133" name="Abandon the Prince" tags="end" position="1264,1736" size="100,100">You ignore the Prince. You ignore the Griffon&#39;s corpse. You turn away and walk off into the tunnels, going deeper and deeper and deeper, until there is no sign of light. You don&#39;t emerge.</tw-passagedata><tw-passagedata pid="134" name="Accept That You Must Fight" tags="" position="1527,1600" size="100,100">It&#39;s unfortunate, but you accept that you must fight, and prepare yourself for it. The Griffon sees your resolve and takes to the air, swooping at you.
 
 [[Duck!]] 
 [[Hold On!]]</tw-passagedata><tw-passagedata pid="135" name="Try to Convince the Griffon That Bloodshed is Pointless" tags="" position="1522,1451" size="100,100">&lt;&lt;if $nest_know&gt;&gt;You are undeterred by the Griffon&#39;s grim perspective, asking it to consider the grief of the Majesty at losing the Prince next to its own in losing its nest. It does not attempt to attack you while you speak, allowing you to move closer as you make your case.
@@ -792,7 +812,9 @@ It falls to your onslaught. You are left standing over its corpse, and the Princ
 
 [[Accept These Terms]]
 [[Reject These Terms; Take Advantage of the Griffon&#39;s Lowered Guard]]
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;You are undeterred by the Griffon&#39;s grim perspective, asking it to consider the grief of the Majesty at losing the Prince. It does not attempt to attack you while you speak, allowing you to move closer as you make your case.
+
+&quot;Thou dost not know of the grief you speak. The Prince is mine, Quester.&quot;
 
 [[Accept That You Must Fight]]
 [[Run Away]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="136" name="Accept These Terms" tags="center" position="1679,1536" size="100,100">You agree with the Griffon and offer the Prince your hand to lead them back home, but they refuse, insistent that the Griffon has to die for them to leave. The Griffon&#39;s tail lashes as they speak.
