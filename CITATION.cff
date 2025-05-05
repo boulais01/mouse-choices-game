@@ -1,9 +1,9 @@
-cff-version: 0.1.0
+cff-version: 1.0.0
 message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Boulais"
   given-names: "Mordred"
 title: "mouse-choices-game"
-version: 0.0.1
-date-released: 2024-11-01
+version: v1.2.1
+date-released: 2025-02-21
 url: "https://github.com/boulais01/mouse-choices-game"
